@@ -12,13 +12,13 @@ var log = function(msg, type){
 phantom.onError = function(msg, trace) {
     var msgStack = [ msg ];
     if (trace && trace.length) {
-        msgStack.push('TRACE:');
+        msgStack.push('Phantom TRACE:');
         trace.forEach(function(t) {
             msgStack.push(' -> ' + (t.file || t.sourceURL) + ': ' + t.line + (t.function ? ' (in function ' + t.function +')' : ''));
         });
     }
     log(msgStack.join('\n'), _.log.ERROR);
-    phantom.exit(1);
+    phantom.exit();
 };
 
 // deps
@@ -151,7 +151,7 @@ function createPage(url, options, onload){
     page.onResourceReceived = function(res){
         if(res.stage === 'end'){
             count--;
-            // log('- [' + count + ']' + res.url);
+            //log('Received [' + count + '] ' + res.url);
             callback();
         }
     };
@@ -381,6 +381,9 @@ M.prototype.capture = function(url, needDiff){
     createPage(url, options, function(page){
         log('loaded: ' + url);
         page.navigationLocked = true;
+        page.onError = function(error){
+            console.log(error)
+        }
         var delay = evaluate(page, options.events.beforeWalk) || 0;
         log('delay before render: ' + delay + 'ms');
         setTimeout(function(){  // delay
