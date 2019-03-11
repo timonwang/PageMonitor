@@ -1,0 +1,10 @@
+{
+  "name": "dptechmonitor",
+  "description": "monitor www.dptech.com",
+  "version": "2.0.1",
+  "private": true,
+  "dependencies": {
+    "dp-page-monitor-ui": "^0.2.7",
+    "dppage-monitor": "*"
+  }
+}
