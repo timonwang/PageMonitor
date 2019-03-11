@@ -1,0 +1,28 @@
+{
+  "name": "dppage-monitor",
+  "version": "0.0.6",
+  "description": "monitor pages and diff the dom change with phantomjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "monitor",
+    "phantomjs",
+    "phantom",
+    "diff"
+  ],
+  "dependencies": {
+    "phantomjs-prebuilt": "2.1.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fouber/page-monitor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fouber/page-monitor/issues"
+  },
+  "homepage": "https://github.com/fouber/page-monitor",
+  "author": "fouber <fouber.NET@gmail.com>",
+  "license": "MIT"
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/reset.css'/>
+    <link rel='stylesheet' href='/css/style.css'/>
+</head>
+<body>
+    <header class="header">
+        <h1><%= title %></h1>
+    </header>
+    <div class="info">
+        <div class="info-inner">
+            <ul>
+                <% list.forEach(function(item){ %>
+                <li><a href="/#!/show/<%= item.path %>" title="click to see detail"><%= item.url %></a></li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <div class="list">
+            <div id="list"></div>
+        </div>
+        <div id="diff"></div>
+    </div>
+    <footer class="footer">
+        <a href="https://github.com/fouber/page-monitor/issues">Report bug</a>
+    </footer>
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
